@@ -14,21 +14,21 @@ const skills = [
 export default function About() {
   const container = {
     hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { staggerChildren: 0.12 } }
+    show: { opacity: 1, transition: { staggerChildren: 0.1 } }
   }
   const item = {
-    hidden: { opacity: 0, y: 10, scale: 0.9 },
-    show: { opacity: 1, y: 0, scale: 1, transition: { ease: 'easeOut', duration: 0.5 } }
+    hidden: { opacity: 0, y: 8, scale: 0.98 },
+    show: { opacity: 1, y: 0, scale: 1, transition: { ease: 'easeOut', duration: 0.45 } }
   }
 
   return (
-    <section className="relative w-full bg-[#0b0b0c] py-24 text-white">
+    <section className="relative w-full py-24" style={{ background: 'var(--bg)', color: 'var(--text)' }}>
       <div className="mx-auto max-w-6xl px-6">
         <motion.h2
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.6 }}
           className="text-3xl sm:text-5xl font-extrabold"
         >
           The Designer Behind the Work
@@ -40,18 +40,16 @@ export default function About() {
           viewport={{ once: true, amount: 0.6 }}
           variants={{
             hidden: {},
-            show: {
-              transition: { staggerChildren: 0.04 }
-            }
+            show: { transition: { staggerChildren: 0.035 } }
           }}
-          className="mt-6 max-w-3xl leading-relaxed text-white/70"
+          className="mt-6 max-w-3xl leading-relaxed opacity-80"
         >
           {"I am a highly self-motivated team player with a mature, positive attitude and a passion to meet challenges in the ever-growing graphic design service industry.".split(' ').map((word, i) => (
             <motion.span
               key={i}
-              initial={{ opacity: 0, y: 6 }}
+              initial={{ opacity: 0, y: 5 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.25, delay: i * 0.03 }}
+              transition={{ duration: 0.22, delay: i * 0.028 }}
               className="inline-block mr-1"
             >
               {word}
@@ -60,11 +58,11 @@ export default function About() {
         </motion.p>
 
         <motion.p
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-10 text-white/80"
+          transition={{ duration: 0.6, delay: 0.15 }}
+          className="mt-10 opacity-80"
         >
           Design is how it works. My fluency across the Adobe Suite and more means I execute with precision.
         </motion.p>
@@ -80,19 +78,19 @@ export default function About() {
             <motion.div
               key={name}
               variants={item}
-              className="group relative flex flex-col items-center justify-center rounded-xl bg-white/5 p-6 backdrop-blur-sm ring-1 ring-white/10 hover:ring-white/20"
+              className="group relative flex flex-col items-center justify-center rounded-xl surface-card p-6 backdrop-blur-sm ring-base"
             >
               <motion.div
-                initial={{ scale: 0.7, opacity: 0 }}
+                initial={{ scale: 0.9, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 viewport={{ once: true }}
-                transition={{ type: 'spring', stiffness: 220, damping: 18, delay: idx * 0.08 }}
+                transition={{ type: 'spring', stiffness: 180, damping: 22, delay: idx * 0.08 }}
                 className="grid place-items-center h-12 w-12 rounded-full"
                 style={{ background: `${color}22` }}
               >
                 <Icon size={28} color={color} />
               </motion.div>
-              <div className="mt-3 text-sm text-white/80">{name}</div>
+              <div className="mt-3 text-sm opacity-80">{name}</div>
             </motion.div>
           ))}
         </motion.div>
