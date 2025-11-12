@@ -15,14 +15,25 @@
   html {
     font-family: var(--font-sans);
     font-feature-settings: "rlig" 1, "calt" 1;
+    background: #0b0b0c;
+    color-scheme: dark;
   }
 
   body {
-    @apply antialiased;
+    @apply antialiased bg-[#0b0b0c] text-white;
   }
 }
 
-/* Custom utility classes for shadcn/ui patterns */
+/* Expressive typography animation for key headings */
+@keyframes kineticShake {
+  0% { transform: translateY(0) rotate(0); }
+  20% { transform: translateY(-6px) rotate(-1.5deg); }
+  40% { transform: translateY(6px) rotate(1.5deg); }
+  60% { transform: translateY(-4px) rotate(-1deg); }
+  80% { transform: translateY(4px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0); }
+}
+
 @layer utilities {
   .animate-in {
     animation-name: animateIn;
